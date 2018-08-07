@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Tests of neo.io.blackrockio
+Tests of neo.io.neuralynxio
 """
 
 # needed for python 3 compatibility
@@ -236,6 +236,8 @@ class TestCheetah_v574(CommonNeuralynxIOTest, unittest.TestCase):
 
 
 class TestData(CommonNeuralynxIOTest, unittest.TestCase):
+
+    @unittest.skip("plaintext data is not present so not working")
     def test_ncs(self):
         for session in self.files_to_test[1:2]:  # in the long run this should include all files
             dirname = self.get_filename_path(session)
