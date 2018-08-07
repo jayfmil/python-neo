@@ -282,6 +282,12 @@ class TestGaps(CommonNeuralynxIOTest, unittest.TestCase):
         self.assertEqual(len(block.channel_indexes[0].analogsignals), n_gaps + 1)
         self.assertEqual(len(block.channel_indexes[-1].units[0].spiketrains), n_gaps + 1)
 
+class TestBmlHeader(CommonNeuralynxIOTest, unittest.TestCase):
+
+    def test_header_read(self):
+        dirname = '/tmp/ncsTestData/Cheetah_v5.3.1_digital'
+        nio = NeuralynxIO(dirname=dirname, use_cache=False)
+
 
 def compare_old_and_new_neuralynxio():
     base = '/tmp/files_for_testing_neo/neuralynx/'
